@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta
 
 def get_usage_class(usage_percent):
-    """Retourne la classe CSS selon le pourcentage d'utilisation"""
+    """Returns CSS class based on usage percentage."""
     if usage_percent <= 50:
         return "usage-vert"
     elif usage_percent <= 80:
