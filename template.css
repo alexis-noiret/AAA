@@ -22,17 +22,17 @@ header {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);   
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+main { 
+    margin-top: 20px;
 }
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    grid-auto-flow: dense;
 }
+
 
 .card {
     background-color: #004080; 
@@ -56,27 +56,19 @@ h2 {
 ul, ol {
     padding-left: 20px;
 }
+/* Code couleur utilisation */
 .usage-vert {
-    background-color: green;
-    color: white;
-    padding: 3px 6px;
-    border-radius: 4px;
+    color: #00ff00; /* vert */
     font-weight: bold;
 }
 
 .usage-orange {
-    background-color: orange;
-    color: white;
-    padding: 3px 6px;
-    border-radius: 4px;
+    color: orange; /* orange */
     font-weight: bold;
 }
 
 .usage-rouge {
-    background-color: red;
-    color: white;
-    padding: 3px 6px;
-    border-radius: 4px;
+    color: red; /* rouge */
     font-weight: bold;
 }
 
@@ -87,4 +79,9 @@ footer {
     margin-top: 30px;
     color: #555;
     font-size: 0.9em;
+}
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
 }
