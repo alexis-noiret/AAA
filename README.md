@@ -1,57 +1,189 @@
-# Challenge Triple A - Dashboard de Monitoring
-Outil simple de monitoring avec un dashboard web qui affiche en temps réel les statistiques d'une machine virtuelle Linux. 
-Cette solution doit être légère, autonome et facilement compréhensible par les équipes techniques.
-Projet La Plateforme
-Bachelor IT B1
+# AAA Monitoring Dashboard - Supervision & Analyse Système
 
-## Description
-Dashboard web HTML/CSS qui affiche les statistisques d'une machine virtuelle Linux grâce à un script Python qui collecte ses données.
+![Python](https://img.shields.io/badge/Backend-Python-blue)
+![Frontend](https://img.shields.io/badge/Frontend-HTML%2FCSS-orange)
+![Monitoring](https://img.shields.io/badge/Domain-System%20Monitoring-green)
+![Security](https://img.shields.io/badge/Use-SOC%20%2F%20DevOps-red)
 
-## Prérequis
-- Python 3.18+
-- La bibliothèque psutil
+Outil de supervision permettant de **collecter, analyser et visualiser en temps réel les performances d’un système Linux** via un script Python et une interface web.
+
+---
+
+## Résumé exécutif
+
+Développement d’un dashboard de monitoring combinant **collecte de données système**, **analyse des ressources** et **visualisation temps réel**.
+
+Le projet simule un outil de supervision utilisé en environnement professionnel (administration système, SOC, DevOps).
+
+---
+
+## Objectif du projet
+
+* Surveiller l’état d’un système Linux
+* Détecter des anomalies (CPU élevé, mémoire saturée)
+* Visualiser les données de manière exploitable
+* Comprendre le fonctionnement interne des ressources système
+
+---
+
+## Architecture
+
+```mermaid
+graph TD
+    System[Machine Linux] --> Collector[Python - psutil]
+    Collector --> Data[Analyse des données]
+    Data --> Dashboard[Interface Web]
+    Dashboard --> User[Utilisateur]
+```
+
+---
+
+## Fonctionnement détaillé
+
+1. Le script Python interroge le système via `psutil`
+2. Les données sont traitées (CPU, RAM, disque)
+3. Les résultats sont injectés dans le dashboard
+4. L’interface affiche les métriques en temps réel
+
+---
+
+## Données collectées
+
+* Utilisation CPU (%)
+* Utilisation mémoire (RAM)
+* Espace disque disponible
+* Analyse des fichiers (type / taille)
+* Charge globale du système
+
+---
+
+## Fonctionnalités
+
+* Monitoring temps réel
+* Dashboard visuel avec indicateurs
+* Rafraîchissement automatique
+* Analyse système simplifiée
+* Interface lisible et exploitable
+
+---
 
 ## Installation
 
-# Commandes pour installer les dépendances
-sudo apt install python3-pip ou sudo apt update, sudo apt upgrade dans le terminal Linux
-pip install psutil dans le terminal cmd ou powershell Windows
+### Prérequis
+
+* Linux
+* Python 3
+
+### Installation
+
+```bash
+sudo apt update
+sudo apt install python3-pip
+pip install psutil
+```
+
+---
 
 ## Utilisation
-Utilisable par n'importe qui soucieux de consulter la consommation de son ordinateur
 
-# Comment lancer un script
-Utiliser le terminal cmd ou powershell, taper la commande python ou python3 pour pouvoir executer les scripts python.
+Lancer le script :
 
-# Ouvrir index.html dans le navigateur
-Pour afficher le dashboard avec les données collectés, ne pas oublier de lancer le script Python avant
+```bash
+python3 monitor.py
+```
 
-## Fonctionnalités
-- Collecte de données grâce au script Python.
-- Affichage du dashboard HTML/CSS grâce aux templates et le script Python
-- Codes couleurs en fonction de la consommation
-- Gauge.js pour visualiser la consommation au lieu de données numériques
-- Analyses système avancées pour visualiser les détails des statistiques
-- Analyse de fichiers approfondies; les extensions de fichiers, l'espace occupé par type de fichiers, etc...
-- Rafraichissement automatique du HTML toutes les 30s
-## Captures d'écran
+Ouvrir ensuite :
 
+```bash
+index.html
+```
 
-## Difficultés rencontrées
-- Remplacer les variables génériques par les données collectées
-- Lier le script Python au template html
-- Trouver les bonnes commandes pour répondre aux demandes de collecte d'informations
-- Push projet depuis la machine virtuelle
-- Installer psutil
-- Travailler en équipe
+---
 
-## Améliorations possibles
-- graphiques représentant le pourçentage d'utilisation ainsi que sa durée
-- Ajout affichage historique des applications
-- Affichage et gestion applications aux démarrages
+## Cas d’usage (réaliste)
+
+Ce type d’outil peut être utilisé pour :
+
+* supervision d’un serveur
+* détection de surcharge système
+* analyse rapide lors d’un incident
+* monitoring en environnement SOC
+
+---
+
+## Compétences démontrées
+
+* Administration système Linux
+* Monitoring système
+* Python (psutil)
+* Analyse de données système
+* Visualisation d’informations techniques
+* Logique outil / dashboard
+
+---
+
+## Limites
+
+* Pas de backend (API)
+* Pas de stockage historique
+* Pas d’alerting automatique
+* Monitoring local uniquement
+
+---
+
+## Perspectives d’amélioration
+
+* Ajout d’un backend (Flask / API)
+* Historisation des données (logs)
+* Mise en place d’alertes (CPU / RAM)
+* Monitoring multi-machines
+* Ajout d’authentification
+* Intégration avec outils SIEM
+
+---
+
+## Valeur professionnelle
+
+Projet proche des outils utilisés en entreprise :
+
+* supervision système
+* analyse des performances
+* détection d’anomalies
+
+Applicable aux métiers :
+
+* Administrateur système
+* DevOps
+* Analyste SOC
+
+---
+
+## Structure du projet
+
+```text
+.
+├── index.html
+├── template.html
+├── template.css
+├── monitor.py
+├── presentation.pdf
+└── README.md
+```
+
+---
+
+## Documentation
+
+Le fichier `presentation.pdf` contient :
+
+* les explications du projet
+* les démonstrations
+* les choix techniques
+
+---
 
 ## Auteur
-Alexis Noiret.
-Michaël Noiret.
-Bachelor IT première année.
-La Plateforme.
+
+Alexis Noiret
+Michaël Noiret
+Étudiants en cybersécurité
